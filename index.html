@@ -176,7 +176,7 @@ footer nav ul{gap:1rem}
 /* BLOG */
 #blog{padding:80px 8%;background:var(--white)}
 .blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
-.blog-card{background:var(--bg);border-top:3px solid var(--navy);cursor:pointer;transition:transform .2s,box-shadow .2s}
+.blog-card{display:block;background:var(--bg);border-top:3px solid var(--navy);cursor:pointer;transition:transform .2s,box-shadow .2s;text-decoration:none;color:inherit}
 .blog-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,.08)}
 .blog-thumb{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;background:var(--navy)}
 .blog-thumb-art{width:100%;aspect-ratio:16/9;display:block;background:var(--navy)}
@@ -185,6 +185,7 @@ footer nav ul{gap:1rem}
 .blog-tag{font-size:.68rem;letter-spacing:.12em;color:var(--red);font-weight:700;margin-bottom:.5rem}
 .blog-title{font-size:.95rem;font-weight:700;color:var(--navy);line-height:1.5;margin-bottom:.75rem}
 .blog-meta{font-size:.75rem;color:var(--gray)}
+.blog-read{display:inline-block;margin-top:.75rem;color:var(--red);font-size:.76rem;font-weight:800}
 .blog-card-inner{display:none;position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.6);overflow-y:auto;padding:40px 20px}
 .blog-card-inner.open{display:flex;justify-content:center;align-items:flex-start}
 .blog-modal{background:var(--white);max-width:720px;width:100%;padding:48px;position:relative}
@@ -1014,17 +1015,28 @@ function renderBlog() {
     grid.innerHTML = '<div class="blog-empty">記事はまだありません。</div>';
     return;
   }
-  grid.innerHTML = ARTICLES.slice().reverse().map(function(a) {
-    return '<div class="blog-card" onclick="openBlogModal(' + a.id + ')">' +
+  grid.innerHTML = ARTICLES.slice(0, 2).map(function(a) {
+    return '<a class="blog-card" href="' + getArticleUrl(a) + '">' +
       getBlogThumbnail(a) +
       '<div class="blog-body">' +
         '<div class="blog-tag">' + a.tag + '</div>' +
         '<div class="blog-title">' + a.title + '</div>' +
         (a.excerpt ? '<div class="blog-excerpt">' + a.excerpt + '</div>' : '') +
         '<div class="blog-meta">' + formatDate(a.date) + '</div>' +
+        '<div class="blog-read">記事を読む →</div>' +
       '</div>' +
-    '</div>';
+    '</a>';
   }).join('');
+}
+
+function getArticleUrl(article) {
+  var fallbackSlugs = {
+    1: 'reverse-lesson-understanding',
+    2: 'daily-task-management',
+    3: 'local-public-university-basics'
+  };
+  var slug = article.slug || fallbackSlugs[article.id] || ('article-' + article.id);
+  return '/article/' + slug + '/';
 }
 
 function getBlogThumbnail(article) {
