@@ -243,9 +243,12 @@
         <span>完全無料・強制なし</span>
         <span>オンライン対応</span>
       </div>
-      <form class="contact-form" name="contact" method="POST" action="/.netlify/functions/contact-submit" data-contact-form netlify-honeypot="bot-field">
-        <input type="hidden" name="form-name" value="contact">
-        <p class="hidden-field"><label>入力しないでください <input name="bot-field"></label></p>
+      <form class="contact-form" name="contact" method="POST" action="https://formsubmit.co/rabbitusausa307@gmail.com">
+        <input type="hidden" name="_subject" value="【LICHT無料相談】公式サイトから申し込みがありました">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://licht-juku.com/thanks.html">
+        <input type="hidden" name="_autoresponse" value="LICHTの無料相談にお申し込みいただき、ありがとうございます。内容を確認のうえ、2営業日以内にご連絡いたします。">
         <label>お名前 <span>必須</span><input name="name" required autocomplete="name"></label>
         <label>学年 <span>必須</span>
           <select name="grade" required>
@@ -261,7 +264,6 @@
         <label>LINE ID <small>任意</small><input name="lineId" autocomplete="off"></label>
         <label>ご質問・ご要望<textarea name="message" rows="4"></textarea></label>
         <button class="primary-btn form-submit" type="submit">無料相談を申し込む</button>
-        <p class="form-status" data-contact-status aria-live="polite"></p>
       </form>
     </section>
   </main>
@@ -280,6 +282,5 @@
     <a href="#contact">無料相談する</a>
   </div>
   <script src="/assets/article.js" defer></script>
-  <script src="/assets/contact.js" defer></script>
 </body>
 </html>

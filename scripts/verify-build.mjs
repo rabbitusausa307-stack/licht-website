@@ -2,13 +2,13 @@ import { access, cp, mkdir, readFile, rm } from 'node:fs/promises';
 
 const requiredFiles = [
   'index.html',
+  'thanks.html',
   'article/index.html',
   'article/detail.html',
   'assets/site.css',
   'assets/article.js',
   'netlify/functions/articles.cjs',
   'netlify/functions/article.cjs',
-  'netlify/functions/contact-submit.cjs',
   'netlify.toml',
 ];
 
@@ -19,6 +19,7 @@ await mkdir('dist', { recursive: true });
 await mkdir('dist/article', { recursive: true });
 
 await cp('index.html', 'dist/index.html');
+await cp('thanks.html', 'dist/thanks.html');
 await cp('article/index.html', 'dist/article/index.html');
 await cp('article/detail.html', 'dist/article/detail.html');
 await cp('assets', 'dist/assets', { recursive: true });
