@@ -1,0 +1,3 @@
+/article/:slug /article/detail.html 200
+/article /article/index.html 200
+/article/ /article/index.html 200

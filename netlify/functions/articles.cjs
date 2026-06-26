@@ -1,0 +1,77 @@
+const ENDPOINT = 'article';
+
+exports.handler = async (event) => {
+  const serviceDomain = process.env.MICROCMS_SERVICE_DOMAIN;
+  const apiKey = process.env.MICROCMS_API_KEY;
+
+  if (!serviceDomain) {
+    return json(500, {
+      message: 'MICROCMS_SERVICE_DOMAIN is not configured.',
+    });
+  }
+
+  if (!apiKey) {
+    return json(500, {
+      message: 'MICROCMS_API_KEY is not configured.',
+    });
+  }
+
+  const slug = event.queryStringParameters && event.queryStringParameters.slug;
+  const url = new URL(`https://${serviceDomain}.microcms.io/api/v1/${ENDPOINT}`);
+
+  if (slug) {
+    url.searchParams.set('limit', '1');
+    url.searchParams.set('filters', `slug[equals]${slug}`);
+  } else {
+    url.searchParams.set('orders', '-publishedAt');
+    url.searchParams.set('fields', 'id,title,slug,description,thumbnail,category,publishedAt');
+    url.searchParams.set('limit', '50');
+  }
+
+  try {
+    const response = await fetch(url, {
+      headers: {
+        'X-MICROCMS-API-KEY': apiKey,
+      },
+    });
+
+    if (!response.ok) {
+      const message = await response.text();
+      return json(response.status, {
+        message: 'Failed to fetch articles from microCMS.',
+        detail: message,
+      });
+    }
+
+    const data = await response.json();
+
+    if (slug) {
+      const article = Array.isArray(data.contents) ? data.contents[0] : null;
+      if (!article) {
+        return json(404, {
+          message: 'Article not found.',
+        });
+      }
+
+      return json(200, article);
+    }
+
+    return json(200, data);
+  } catch (error) {
+    return json(500, {
+      message: 'Unexpected error while fetching articles.',
+      detail: error instanceof Error ? error.message : String(error),
+    });
+  }
+};
+
+function json(statusCode, body) {
+  return {
+    statusCode,
+    headers: {
+      'Content-Type': 'application/json; charset=utf-8',
+      'Cache-Control': statusCode === 200 ? 'public, max-age=60, s-maxage=300' : 'no-store',
+    },
+    body: JSON.stringify(body),
+  };
+}
