@@ -90,7 +90,15 @@ async function renderDetail() {
 }
 
 async function fetchJson(url) {
-  const response = await fetch(url);
+  const requestUrl = new URL(url, location.origin);
+  requestUrl.searchParams.set('_', Date.now().toString());
+
+  const response = await fetch(requestUrl.toString(), {
+    cache: 'no-store',
+    headers: {
+      'Cache-Control': 'no-cache',
+    },
+  });
   const data = await response.json().catch(() => ({}));
 
   if (!response.ok) {
