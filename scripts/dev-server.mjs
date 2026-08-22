@@ -14,6 +14,7 @@ const mimeTypes = {
   '.png': 'image/png',
   '.jpg': 'image/jpeg',
   '.jpeg': 'image/jpeg',
+  '.webp': 'image/webp',
   '.svg': 'image/svg+xml',
 };
 
@@ -53,7 +54,7 @@ function resolveStaticPath(pathname) {
     return join(root, 'article', 'index.html');
   }
 
-  if (pathname.startsWith('/article/')) {
+  if (pathname.startsWith('/article/') && !pathname.endsWith('.html')) {
     return join(root, 'article', 'detail.html');
   }
 
