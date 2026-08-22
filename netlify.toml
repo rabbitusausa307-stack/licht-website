@@ -1,7 +1,6 @@
 [build]
-  publish = "dist"
+  publish = "legacy-dist"
   functions = "netlify/functions"
-  command = "npm run build"
 
 [[redirects]]
   from = "/article/:slug"
