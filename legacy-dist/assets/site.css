@@ -14,9 +14,9 @@ html{scroll-behavior:smooth;font-size:16px}
 body{font-family:'Noto Sans JP',sans-serif;background:var(--cream);color:var(--ink);line-height:1.75;overflow-x:hidden;padding-bottom:64px}
 a{color:inherit}
 img{max-width:100%;display:block}
-.site-header{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;gap:12px;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);padding:8px 12px;border-bottom:1px solid rgba(23,36,95,.12)}
+.site-header{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;gap:10px;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);padding:4px 12px;border-bottom:1px solid rgba(23,36,95,.12)}
 .brand{color:var(--navy);text-decoration:none;font-size:20px;font-weight:900;letter-spacing:.08em;flex:0 0 auto}
-.brand-image img{width:112px;height:auto}
+.brand-image img{width:96px;height:auto}
 .header-nav{display:flex;align-items:center;gap:9px;white-space:nowrap;overflow-x:auto;scrollbar-width:none}
 .header-nav::-webkit-scrollbar{display:none}
 .header-nav a{color:var(--navy);font-size:11px;font-weight:900;text-decoration:none}
@@ -187,9 +187,9 @@ img{max-width:100%;display:block}
 .error{border-left:4px solid var(--red)}
 @media (min-width:720px){
   body{padding-bottom:0}
-  .site-header{padding:14px 34px}
+  .site-header{padding:6px 34px}
   .brand{font-size:24px}
-  .brand-image img{width:148px}
+  .brand-image img{width:116px}
   .header-nav{gap:20px}
   .header-nav a{font-size:13px}
   .header-nav .header-cta{padding:9px 18px}
