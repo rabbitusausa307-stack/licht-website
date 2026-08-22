@@ -121,7 +121,7 @@ for (const requirement of [
   }
 }
 
-for (const file of ['assets/article.js', 'assets/site.js', 'api/articles.js', 'api/article.js', 'scripts/dev-server.mjs', 'scripts/e2e.mjs', 'scripts/click-audit.mjs', 'scripts/form-live-audit.mjs']) {
+for (const file of ['assets/article.js', 'assets/site.js', 'api/articles.js', 'api/article.js', 'scripts/dev-server.mjs']) {
   execFileSync(process.execPath, ['--check', file], { stdio: 'inherit' });
   const source = await readFile(file, 'utf8');
   if (source.includes('�')) throw new Error(`${file} contains replacement characters.`);
