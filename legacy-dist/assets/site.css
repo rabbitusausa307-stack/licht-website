@@ -194,6 +194,9 @@ img{max-width:100%;display:block}
 .reverse-cycle-points span{font-size:13px;line-height:1.65;color:#4a5263}
 .reverse-cycle-figure{overflow:hidden;background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:0 14px 30px rgba(23,36,95,.1)}
 .reverse-cycle-figure img{display:block;width:100%;height:auto}
+@media (max-width:719px){
+  .reverse-cycle-figure{width:calc(100% + 32px);margin:0 -16px;border-right:0;border-left:0;border-radius:0;box-shadow:0 10px 24px rgba(23,36,95,.09)}
+}
 .page-hero{background:var(--navy);color:#fff;padding:42px 16px 32px}
 .page-hero .section-kicker{color:var(--yellow)}
 .page-hero h1{color:#fff;font-size:34px}
