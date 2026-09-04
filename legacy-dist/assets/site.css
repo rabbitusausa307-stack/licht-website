@@ -195,6 +195,7 @@ img{max-width:100%;display:block}
 .reverse-cycle-figure{overflow:hidden;background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:0 14px 30px rgba(23,36,95,.1)}
 .reverse-cycle-figure img{display:block;width:100%;height:auto}
 @media (max-width:719px){
+  .edge-to-edge-visual{width:calc(100% + 32px);margin-right:-16px;margin-left:-16px;border-right:0!important;border-left:0!important;border-radius:0!important;box-shadow:0 10px 24px rgba(23,36,95,.09)!important}
   .reverse-cycle-figure{width:calc(100% + 32px);margin:0 -16px;border-right:0;border-left:0;border-radius:0;box-shadow:0 10px 24px rgba(23,36,95,.09)}
 }
 .page-hero{background:var(--navy);color:#fff;padding:42px 16px 32px}
