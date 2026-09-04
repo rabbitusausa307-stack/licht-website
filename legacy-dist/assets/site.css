@@ -14,12 +14,12 @@ html{scroll-behavior:smooth;font-size:16px}
 body{font-family:'Noto Sans JP',sans-serif;background:var(--cream);color:var(--ink);line-height:1.75;overflow-x:hidden;padding-bottom:64px}
 a{color:inherit}
 img{max-width:100%;display:block}
-.site-header{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;gap:10px;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);padding:4px 12px;border-bottom:1px solid rgba(23,36,95,.12)}
+.site-header{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;gap:10px;background:#fff;backdrop-filter:blur(10px);padding:4px 12px;border-bottom:1px solid rgba(23,36,95,.16);box-shadow:0 2px 10px rgba(23,36,95,.08)}
 .brand{color:var(--navy);text-decoration:none;font-size:20px;font-weight:900;letter-spacing:.08em;flex:0 0 auto}
 .brand-image img{width:96px;height:auto}
 .header-nav{display:flex;align-items:center;gap:9px;white-space:nowrap;overflow-x:auto;scrollbar-width:none}
 .header-nav::-webkit-scrollbar{display:none}
-.header-nav a{color:var(--navy);font-size:11px;font-weight:900;text-decoration:none}
+.header-nav a{color:#10205c;font-size:11px;font-weight:900;text-decoration:none}
 .header-nav a[aria-current="page"]{color:var(--red)}
 .header-nav .header-cta{background:var(--red);color:#fff;padding:8px 10px;border-radius:999px}
 .hero{display:grid;gap:18px;padding:26px 16px 26px;background:linear-gradient(180deg,#17245f 0%,#22317a 100%);color:#fff}
