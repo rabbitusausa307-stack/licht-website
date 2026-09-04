@@ -187,6 +187,13 @@ img{max-width:100%;display:block}
 .visual-explainer{display:grid;gap:20px;align-items:center}
 .visual-explainer figure{overflow:hidden;background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:0 14px 30px rgba(23,36,95,.1)}
 .visual-explainer img{width:100%;aspect-ratio:16/10;object-fit:cover}
+.reverse-cycle-section{display:grid;gap:22px;align-items:center}
+.reverse-cycle-points{display:grid;gap:9px;margin-top:20px}
+.reverse-cycle-points p{display:grid;gap:2px;background:#fff;border:1px solid var(--line);border-left:4px solid var(--yellow);border-radius:10px;padding:12px 14px;color:var(--navy)}
+.reverse-cycle-points strong{font-size:14px}
+.reverse-cycle-points span{font-size:13px;line-height:1.65;color:#4a5263}
+.reverse-cycle-figure{overflow:hidden;background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:0 14px 30px rgba(23,36,95,.1)}
+.reverse-cycle-figure img{display:block;width:100%;height:auto}
 .page-hero{background:var(--navy);color:#fff;padding:42px 16px 32px}
 .page-hero .section-kicker{color:var(--yellow)}
 .page-hero h1{color:#fff;font-size:34px}
@@ -255,6 +262,7 @@ img{max-width:100%;display:block}
   .detail-photo-hero .detail-hero-copy{width:min(47%,600px)}
   .detail-hero-copy h1{font-size:48px}
   .visual-explainer{grid-template-columns:minmax(0,1fr) minmax(420px,1.2fr);gap:42px}
+  .reverse-cycle-section{grid-template-columns:minmax(0,.78fr) minmax(520px,1.4fr);gap:42px}
   .worry-grid{grid-template-columns:repeat(5,1fr)}
   .worry-grid p{min-height:110px;display:flex;align-items:center}
   .cycle-strip{grid-template-columns:repeat(4,1fr)}
