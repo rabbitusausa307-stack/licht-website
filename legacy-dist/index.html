@@ -226,12 +226,11 @@
         <span>完全無料・強制なし</span>
         <span>オンライン対応</span>
       </div>
-      <form class="contact-form" action="https://formsubmit.co/lichthirodai2026@gmail.com" method="POST">
+      <form id="contact-form" class="contact-form" action="https://formsubmit.co/lichthirodai2026@gmail.com" method="POST">
         <input type="hidden" name="_subject" value="【LICHT】無料相談のお申し込みがありました">
         <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_next" value="https://licht-juku.com/thanks.html">
-        <input type="hidden" name="_autoresponse" value="この度は、LICHTの無料相談へお申し込みいただき、誠にありがとうございます。&#10;&#10;お申し込みを受け付けました。内容を確認のうえ、LICHTより原則2営業日以内にご連絡いたします。&#10;&#10;ご相談は完全オンラインで行います。入塾を無理におすすめすることはありませんので、現在の学習状況や志望校について、安心してお聞かせください。&#10;&#10;お急ぎの場合や入力内容に誤りがあった場合は、こちらのメールへご返信ください。&#10;&#10;LICHT&#10;地方国公立受験専門塾">
+        <input type="hidden" name="_autoresponse" value="この度は、LICHTの無料相談にお申し込みいただき、誠にありがとうございます。">
         <label>お名前 <span>必須</span><input name="name" required autocomplete="name"></label>
         <label>学年 <span>必須</span>
           <select name="grade" required>
@@ -265,5 +264,6 @@
     <a href="#contact">無料相談する</a>
   </div>
   <script src="/assets/article.js" defer></script>
+  <script src="/assets/contact-form.js" defer></script>
 </body>
 </html>
